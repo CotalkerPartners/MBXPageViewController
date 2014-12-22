@@ -1,6 +1,41 @@
+#MBXPageViewController
+
+A library that allows to have a UIPageController with control buttons (One per VC / Left-Right Buttons) or an UISegmentController. This is not a difficult task, but the intention of this library is to make it extremely easy, clean and fast. We resemble the use of a UITableView in a UIViewController.
+
+## Features
+### Page Modes
+- MBX_FreeButtons: Add as many buttons as Viewcontrollers. You can jump to an specific ViewController with that Button or you can swipe your way through
+- MBX_LeftRightButtons: Use two buttons to move left or right through the ViewControllers.
+- MBX_SegmentController: Use a SegmentController to move between the ViewControllers.
+
+### Other Features
+- Delegate: Everytime that a new ViewController Appear you can trigger other actions.
+- Storyboard / Xib / Programmatically Created Views: You can use any of those or even mix them.
+
+## What can I include in the ViewControllers
+- UITableViewControllers
+- UICollectionViewControllers
+- UIViewControllers
+- Pretty much anything!
+
+## Installation
+
+### CocoaPod coming soon
+
+### Adding the Files
+
+Add MBXPageViewController.h / .m to your project and you are ready to go.
+
+## Examples
+
+You can find examples for the three different ways to use this (Free Buttons, Left Right or with an UISegmentController) in the project.
+
+## Based in the Work of cwRichardKim
+
+Based in: https://github.com/cwRichardKim/RKSwipeBetweenViewControllers
+
 MBXPageViewController
 =====================
-
 
 The MIT License (MIT)
 
