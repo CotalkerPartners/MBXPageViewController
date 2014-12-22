@@ -14,9 +14,9 @@
 		2E9DE2FD1A47F0BB0088A0A6 /* MBXFreeButtonsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9DE2F11A47F0BB0088A0A6 /* MBXFreeButtonsViewController.m */; };
 		2E9DE2FE1A47F0BB0088A0A6 /* MBXLeftRightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9DE2F41A47F0BB0088A0A6 /* MBXLeftRightViewController.m */; };
 		2E9DE2FF1A47F0BB0088A0A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E9DE2F51A47F0BB0088A0A6 /* Main.storyboard */; };
-		2E9DE3001A47F0BB0088A0A6 /* MBXPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9DE2F81A47F0BB0088A0A6 /* MBXPageViewController.m */; };
 		2E9DE3011A47F0BB0088A0A6 /* MBXSegmentControllerExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9DE2FB1A47F0BB0088A0A6 /* MBXSegmentControllerExampleViewController.m */; };
 		2E9DE3021A47F0BB0088A0A6 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E9DE2FC1A47F0BB0088A0A6 /* View.xib */; };
+		2E9DE3061A47F5850088A0A6 /* MBXPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9DE3051A47F5850088A0A6 /* MBXPageViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,11 +44,11 @@
 		2E9DE2F31A47F0BB0088A0A6 /* MBXLeftRightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBXLeftRightViewController.h; sourceTree = "<group>"; };
 		2E9DE2F41A47F0BB0088A0A6 /* MBXLeftRightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBXLeftRightViewController.m; sourceTree = "<group>"; };
 		2E9DE2F51A47F0BB0088A0A6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		2E9DE2F71A47F0BB0088A0A6 /* MBXPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBXPageViewController.h; sourceTree = "<group>"; };
-		2E9DE2F81A47F0BB0088A0A6 /* MBXPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBXPageViewController.m; sourceTree = "<group>"; };
 		2E9DE2FA1A47F0BB0088A0A6 /* MBXSegmentControllerExampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBXSegmentControllerExampleViewController.h; sourceTree = "<group>"; };
 		2E9DE2FB1A47F0BB0088A0A6 /* MBXSegmentControllerExampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBXSegmentControllerExampleViewController.m; sourceTree = "<group>"; };
 		2E9DE2FC1A47F0BB0088A0A6 /* View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
+		2E9DE3041A47F5850088A0A6 /* MBXPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBXPageViewController.h; sourceTree = "<group>"; };
+		2E9DE3051A47F5850088A0A6 /* MBXPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBXPageViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,10 +90,10 @@
 		2E9DE2C81A47F04A0088A0A6 /* MBXPageController */ = {
 			isa = PBXGroup;
 			children = (
+				2E9DE3031A47F5850088A0A6 /* MBXPageViewController */,
 				2E9DE2EF1A47F0BB0088A0A6 /* FreeButtonsDemo */,
 				2E9DE2F21A47F0BB0088A0A6 /* LeftRightArrows */,
 				2E9DE2F51A47F0BB0088A0A6 /* Main.storyboard */,
-				2E9DE2F61A47F0BB0088A0A6 /* MBXSegmentPage */,
 				2E9DE2F91A47F0BB0088A0A6 /* UISegmentController */,
 				2E9DE2FC1A47F0BB0088A0A6 /* View.xib */,
 				2E9DE2CD1A47F04A0088A0A6 /* AppDelegate.h */,
@@ -148,15 +148,6 @@
 			path = LeftRightArrows;
 			sourceTree = "<group>";
 		};
-		2E9DE2F61A47F0BB0088A0A6 /* MBXSegmentPage */ = {
-			isa = PBXGroup;
-			children = (
-				2E9DE2F71A47F0BB0088A0A6 /* MBXPageViewController.h */,
-				2E9DE2F81A47F0BB0088A0A6 /* MBXPageViewController.m */,
-			);
-			path = MBXSegmentPage;
-			sourceTree = "<group>";
-		};
 		2E9DE2F91A47F0BB0088A0A6 /* UISegmentController */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +155,15 @@
 				2E9DE2FB1A47F0BB0088A0A6 /* MBXSegmentControllerExampleViewController.m */,
 			);
 			path = UISegmentController;
+			sourceTree = "<group>";
+		};
+		2E9DE3031A47F5850088A0A6 /* MBXPageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2E9DE3041A47F5850088A0A6 /* MBXPageViewController.h */,
+				2E9DE3051A47F5850088A0A6 /* MBXPageViewController.m */,
+			);
+			path = MBXPageViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,11 +268,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E9DE2CF1A47F04A0088A0A6 /* AppDelegate.m in Sources */,
-				2E9DE3001A47F0BB0088A0A6 /* MBXPageViewController.m in Sources */,
 				2E9DE2CC1A47F04A0088A0A6 /* main.m in Sources */,
 				2E9DE3011A47F0BB0088A0A6 /* MBXSegmentControllerExampleViewController.m in Sources */,
 				2E9DE2FE1A47F0BB0088A0A6 /* MBXLeftRightViewController.m in Sources */,
 				2E9DE2FD1A47F0BB0088A0A6 /* MBXFreeButtonsViewController.m in Sources */,
+				2E9DE3061A47F5850088A0A6 /* MBXPageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
