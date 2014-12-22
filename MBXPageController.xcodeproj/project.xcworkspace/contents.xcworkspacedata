@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:MBXSegmentPageViewController.xcodeproj">
+      location = "self:MBXPageController.xcodeproj">
    </FileRef>
 </Workspace>
