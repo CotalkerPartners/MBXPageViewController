@@ -20,7 +20,12 @@ A library that allows to have a UIPageController with control buttons (One per V
 
 ## Installation
 
-### CocoaPod coming soon
+### CocoaPod
+
+Available in [Cocoa Pods](http://cocoapods.org/?q=MBXPageViewController)
+```
+pod 'MBXPageViewController'
+```
 
 ### Adding the Files
 
@@ -29,6 +34,78 @@ Add MBXPageViewController.h / .m to your project and you are ready to go.
 ## Examples
 
 You can find examples for the three different ways to use this (Free Buttons, Left Right or with an UISegmentController) in the project.
+
+## Code Example
+
+```
+#import "MBXSegmentControllerExampleViewController.h"
+#import "MBXPageViewController.h"
+
+@interface MBXSegmentControllerExampleViewController () <MBXPageControllerDataSource, MBXPageControllerDataDelegate>
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentController;
+@property (weak, nonatomic) IBOutlet UIView *containerView;
+
+@end
+
+@implementation MBXSegmentControllerExampleViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    // Initiate MBXPageController
+    MBXPageViewController *MBXPageController = [MBXPageViewController new];
+    MBXPageController.MBXDataSource = self;
+    MBXPageController.MBXDataDelegate = self;
+    MBXPageController.pageMode = MBX_SegmentController;
+    [MBXPageController reloadPages];
+}
+
+#pragma mark - MBXPageViewController Data Source
+
+- (NSArray *)MBXPageButtons
+{
+    return @[self.segmentController];
+}
+
+- (UIView *)MBXPageContainer
+{
+    return self.containerView;
+}
+
+- (NSArray *)MBXPageControllers
+{
+    // You can Load a VC directly from Storyboard
+    UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    UIViewController *demo  = [mainStoryboard instantiateViewControllerWithIdentifier:@"firstController"];
+    
+    // Or Load it from a xib file
+    UIViewController *demo2 = [UIViewController new];
+    demo2.view = [[[NSBundle mainBundle] loadNibNamed:@"View" owner:self options:nil] objectAtIndex:0];
+    
+    // Or create it programatically
+    UIViewController *demo3 = [[UIViewController alloc] init];
+    demo3.view.backgroundColor = [UIColor orangeColor];
+    
+    UILabel *fromLabel = [[UILabel alloc]initWithFrame:CGRectMake(100, 40, 300, 40)];
+    fromLabel.text = @"Third Controller";
+    
+    [demo3.view addSubview:fromLabel];
+    
+    // The order matters.
+    return @[demo,demo2,demo3];
+}
+
+
+
+#pragma mark - MBXPageViewController Delegate
+
+- (void)MBXPageChangedToIndex:(NSInteger)index
+{
+    NSLog(@"%@ %ld", [self class], (long)index);
+}
+
+```
 
 ## Based in the Work of cwRichardKim
 
