@@ -140,6 +140,13 @@
     }
 }
 
+- (void)viewWillLayoutSubviews
+{
+    UIView* container = [[self MBXDataSource] MBXPageContainer];
+    self.view.frame = CGRectMake(0.0, 0.0, container.frame.size.width, container.frame.size.height);
+    [super viewWillLayoutSubviews];
+}
+
 #pragma mark -
 #pragma mark - Button and Controller Interactions
 #pragma mark - Free Buttons Mode
