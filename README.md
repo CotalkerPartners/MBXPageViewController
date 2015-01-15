@@ -4,7 +4,7 @@ A library that allows to have a UIPageController with control buttons (One per V
 
 ## How it looks
 ### Free Buttons
-![Free Buttons Gif](AnimatedGif/FreeButtonsArrow.gif)
+![Free Buttons Gif](AnimatedGif/FreeButtons.gif)
 ### Left/ Right Arrow Buttons
 ![Arrow Buttons Gif](AnimatedGif/ArrowButtons.gif)
 ### SegmentController Buttons
