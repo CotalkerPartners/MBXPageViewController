@@ -3,12 +3,9 @@
 A library that allows to have a UIPageController with control buttons (One per VC / Left-Right Buttons) or an UISegmentController. This is not a difficult task, but the intention of this library is to make it extremely easy, clean and fast. We resemble the use of a UITableView in a UIViewController.
 
 ## How it looks
-### Free Buttons
-![Free Buttons Gif](AnimatedGif/FreeButtons.gif)
-### Left/ Right Arrow Buttons
-![Arrow Buttons Gif](AnimatedGif/ArrowButtons.gif)
-### SegmentController Buttons
-![Segment Gif](AnimatedGif/Segment.gif)
+!(Screenshots/screenshot_1.png)
+!(Screenshots/screenshot_2.png)
+!(Screenshots/screenshot_3.png)
 
 ## Features
 ### Page Modes
