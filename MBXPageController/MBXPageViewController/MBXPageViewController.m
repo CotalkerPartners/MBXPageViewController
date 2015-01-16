@@ -210,23 +210,30 @@
     // Check to see which way are you going (Left -> Right or Right -> Left)
     if (destination > tempIndex) {
         for (int i = (int)tempIndex+1; i<=destination; i++) {
-            [self setPageControllerForIndex:i direction:UIPageViewControllerNavigationDirectionForward currentMBXViewController:weakSelf];
+            [self setPageControllerForIndex:i direction:UIPageViewControllerNavigationDirectionForward currentMBXViewController:weakSelf destionation:destination];
         }
     }
     
     // Right -> Left
     else if (destination < tempIndex) {
         for (int i = (int)tempIndex-1; i >= destination; i--) {
-            [self setPageControllerForIndex:i direction:UIPageViewControllerNavigationDirectionReverse currentMBXViewController:weakSelf];
+            [self setPageControllerForIndex:i direction:UIPageViewControllerNavigationDirectionReverse currentMBXViewController:weakSelf destionation:destination];
         }
     }
 }
 
 - (void)setPageControllerForIndex:(NSInteger)index direction:(UIPageViewControllerNavigationDirection)direction currentMBXViewController:(id)weakSelf
 {
+        [self setPageControllerForIndex:index direction:direction currentMBXViewController:weakSelf destionation:0];
+}
+
+- (void)setPageControllerForIndex:(NSInteger)index direction:(UIPageViewControllerNavigationDirection)direction currentMBXViewController:(id)weakSelf destionation:(NSInteger)destination
+{
+    __block NSInteger pageModeBlock = _pageMode;
     [_pageController setViewControllers:@[[_viewControllerArray objectAtIndex:index]] direction:direction animated:YES completion:^(BOOL complete){
         __strong __typeof(&*weakSelf)strongSelf = weakSelf;
         if (complete && strongSelf) {
+            if ((pageModeBlock == MBX_SegmentController) && (index != destination)) return; // It should update the segment buttons when the user already pressed in a segment
             [strongSelf updateCurrentPageIndex:index];
         }
     }];
