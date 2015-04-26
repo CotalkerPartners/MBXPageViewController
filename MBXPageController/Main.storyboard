@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="iun-KW-GKB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="iun-KW-GKB">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <scenes>
         <!--Left Right View Controller-->
@@ -50,6 +50,15 @@
                                 <rect key="frame" x="0.0" y="114" width="320" height="454"/>
                                 <color key="backgroundColor" red="0.79742476851851851" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XkZ-a8-WEq">
+                                <rect key="frame" x="201" y="76" width="30" height="30"/>
+                                <state key="normal" title="3">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goToThirdScreen:" destination="LyC-6C-5Ou" eventType="touchUpInside" id="9Ck-gs-Biz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -423,14 +432,30 @@
                                 <rect key="frame" x="0.0" y="126" width="320" height="442"/>
                                 <color key="backgroundColor" red="0.92586805555555551" green="0.57916666666666572" blue="0.33903356481481484" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sJE-46-Fw9">
+                                <rect key="frame" x="290" y="79" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="bVI-hM-vg1"/>
+                                    <constraint firstAttribute="height" constant="30" id="jOk-Iq-ndD"/>
+                                </constraints>
+                                <state key="normal" title="3">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goToThirdScreen:" destination="LyC-6C-5Ou" eventType="touchUpInside" id="qhN-dU-2Vx"/>
+                                    <action selector="goToThirdView:" destination="6QA-Fz-SDi" eventType="touchUpInside" id="J5p-I8-1v8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="sJE-46-Fw9" firstAttribute="top" secondItem="i1X-lX-CBQ" secondAttribute="bottom" constant="15" id="GGN-fF-6v7"/>
                             <constraint firstItem="pVo-p0-XmK" firstAttribute="leading" secondItem="FuK-9P-3du" secondAttribute="leading" id="O8s-Sd-FDg"/>
                             <constraint firstAttribute="centerX" secondItem="aGr-fK-uVY" secondAttribute="centerX" id="enA-fu-ime"/>
                             <constraint firstAttribute="trailing" secondItem="pVo-p0-XmK" secondAttribute="trailing" id="ff7-hd-YUu"/>
                             <constraint firstItem="aGr-fK-uVY" firstAttribute="top" secondItem="i1X-lX-CBQ" secondAttribute="bottom" constant="15" id="iyY-WF-XYh"/>
                             <constraint firstItem="Y2b-pT-TgT" firstAttribute="top" secondItem="pVo-p0-XmK" secondAttribute="bottom" id="kMG-WD-R1E"/>
+                            <constraint firstAttribute="trailing" secondItem="sJE-46-Fw9" secondAttribute="trailing" id="nF7-ss-ygq"/>
                             <constraint firstItem="pVo-p0-XmK" firstAttribute="top" secondItem="aGr-fK-uVY" secondAttribute="bottom" constant="19" id="vu9-Gf-QYm"/>
                         </constraints>
                     </view>

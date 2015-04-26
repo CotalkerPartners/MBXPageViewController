@@ -52,6 +52,32 @@
     [self connectButtons];
 }
 
+- (void)moveToViewNumber:(NSInteger)viewNumber
+{
+    NSAssert([_viewControllerArray count] > viewNumber, @"viewNumber exceeds the number of current viewcontrollers");
+    id viewController = _viewControllerArray[viewNumber];
+    [self MBXPageChangedToIndex:_currentPageIndex];
+    
+    __weak __typeof(self)weakSelf = self;
+    [self setViewControllers:@[viewController]
+                   direction:UIPageViewControllerNavigationDirectionForward
+                    animated:YES
+                  completion:^(BOOL finished) {
+                      
+                      if (!weakSelf) return;
+                      __strong __typeof(weakSelf)strongSelf = weakSelf;
+                      
+                      dispatch_async(dispatch_get_main_queue(), ^{
+                          
+                          [strongSelf updateCurrentPageIndex:viewNumber];
+                          [strongSelf setViewControllers:@[viewController]
+                                         direction:UIPageViewControllerNavigationDirectionForward
+                                          animated:NO completion:nil];
+                      });
+                  }];
+
+}
+
 #pragma mark - Setup
 
 - (void)loadControllerAndView

@@ -15,6 +15,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *currentIndicator;
 
 @property (weak, nonatomic) IBOutlet UIView *container;
+
+@property (strong, nonatomic) MBXPageViewController *MBXPageController;
 @end
 
 @implementation MBXLeftRightViewController
@@ -23,11 +25,16 @@
     [super viewDidLoad];
     
     // Initiate MBXPageController
-    MBXPageViewController *MBXPageController = [MBXPageViewController new];
-    MBXPageController.MBXDataSource = self;
-    MBXPageController.MBXDataDelegate = self;
-    MBXPageController.pageMode = MBX_LeftRightArrows;
-    [MBXPageController reloadPages];
+    self.MBXPageController = [MBXPageViewController new];
+    self.MBXPageController.MBXDataSource = self;
+    self.MBXPageController.MBXDataDelegate = self;
+    self.MBXPageController.pageMode = MBX_LeftRightArrows;
+    [self.MBXPageController reloadPages];
+}
+
+- (IBAction)goToThirdScreen:(id)sender {
+    
+    [self.MBXPageController moveToViewNumber:2];
 }
 
 #pragma mark - MBXPageViewController Data Source

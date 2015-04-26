@@ -13,6 +13,8 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentController;
 @property (weak, nonatomic) IBOutlet UIView *containerView;
 
+@property (strong, nonatomic) MBXPageViewController* MBXPageController;
+
 @end
 
 @implementation MBXSegmentControllerExampleViewController
@@ -21,12 +23,18 @@
     [super viewDidLoad];
     
     // Initiate MBXPageController
-    MBXPageViewController *MBXPageController = [MBXPageViewController new];
-    MBXPageController.MBXDataSource = self;
-    MBXPageController.MBXDataDelegate = self;
-    MBXPageController.pageMode = MBX_SegmentController;
-    [MBXPageController reloadPages];
+    self.MBXPageController = [MBXPageViewController new];
+    self.MBXPageController.MBXDataSource = self;
+    self.MBXPageController.MBXDataDelegate = self;
+    self.MBXPageController.pageMode = MBX_SegmentController;
+    [self.MBXPageController reloadPages];
 }
+
+- (IBAction)goToThirdView:(id)sender {
+    
+    [self.MBXPageController moveToViewNumber:2];
+}
+
 
 #pragma mark - MBXPageViewController Data Source
 
