@@ -34,7 +34,7 @@ typedef NS_ENUM(NSInteger, MBXPageMode) {
 - (NSArray *)MBXPageControllers;
 - (UIView *)MBXPageContainer;
 @optional
-- (void)otherConfiguration;
+- (void)otherConfiguration;                         // Good place to put methods that you want to execute after everything is ready i.e. moveToViewNumber to set a different starting page.
 @end
 
 @protocol MBXPageControllerDataDelegate <NSObject>
