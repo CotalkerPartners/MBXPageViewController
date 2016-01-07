@@ -33,6 +33,8 @@ typedef NS_ENUM(NSInteger, MBXPageMode) {
 - (NSArray *)MBXPageButtons;
 - (NSArray *)MBXPageControllers;
 - (UIView *)MBXPageContainer;
+@optional
+- (void)otherConfiguration;
 @end
 
 @protocol MBXPageControllerDataDelegate <NSObject>
