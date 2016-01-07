@@ -50,6 +50,13 @@
     [self loadControllerAndView];
     [self loadControllers];
     [self connectButtons];
+    [[self MBXDataSource] otherConfiguration];
+}
+
+#pragma mark - Setup
+
+- (void)otherConfiguration {
+  // Replace me   
 }
 
 - (void)moveToViewNumber:(NSInteger)viewNumber
