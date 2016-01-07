@@ -50,7 +50,9 @@
     [self loadControllerAndView];
     [self loadControllers];
     [self connectButtons];
-    [[self MBXDataSource] otherConfiguration];
+    if([[self MBXDataSource] respondsToSelector:@selector(otherConfiguration)]) {
+        [[self MBXDataSource] otherConfiguration];
+    }
 }
 
 #pragma mark - Setup
