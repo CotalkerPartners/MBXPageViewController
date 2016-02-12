@@ -30,7 +30,7 @@ A library that allows to have a UIPageController with control buttons (One per V
 
 ### CocoaPod
 
-Available in [Cocoa Pods](http://cocoapods.org/?q=MBXPageViewController)
+Available in [CocoaPods](http://cocoapods.org/?q=MBXPageViewController)
 ```
 pod 'MBXPageViewController'
 ```
