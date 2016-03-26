@@ -68,8 +68,12 @@
     [self MBXPageChangedToIndex:_currentPageIndex];
     
     __weak __typeof(self)weakSelf = self;
+    UIPageViewControllerNavigationDirection direction = UIPageViewControllerNavigationDirectionForward;
+    if (_currentPageIndex > viewNumber) {
+        direction = UIPageViewControllerNavigationDirectionReverse;
+    }
     [self setViewControllers:@[viewController]
-                   direction:UIPageViewControllerNavigationDirectionForward
+                   direction:direction
                     animated:YES
                   completion:^(BOOL finished) {
                       
@@ -80,11 +84,10 @@
                           
                           [strongSelf updateCurrentPageIndex:viewNumber];
                           [strongSelf setViewControllers:@[viewController]
-                                         direction:UIPageViewControllerNavigationDirectionForward
-                                          animated:NO completion:nil];
+                                               direction:direction
+                                                animated:NO completion:nil];
                       });
                   }];
-
 }
 
 #pragma mark - Setup
