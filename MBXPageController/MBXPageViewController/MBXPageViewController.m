@@ -44,9 +44,9 @@
 
 #pragma mark - Public
 
-- (void)reloadPages
-{
+- (void)reloadPagesToCurrentPageIndex:(NSInteger)currentPageIndex {
     // Initialize/ Refresh everything
+    self.currentPageIndex = currentPageIndex;
     [self loadControllerAndView];
     [self loadControllers];
     [self connectButtons];
@@ -61,8 +61,7 @@
   // Replace me   
 }
 
-- (void)moveToViewNumber:(NSInteger)viewNumber
-{
+- (void)moveToViewNumber:(NSInteger)viewNumber animated:(BOOL)animated {
     NSAssert([_viewControllerArray count] > viewNumber, @"viewNumber exceeds the number of current viewcontrollers");
     id viewController = _viewControllerArray[viewNumber];
     [self MBXPageChangedToIndex:_currentPageIndex];
@@ -74,7 +73,7 @@
     }
     [self setViewControllers:@[viewController]
                    direction:direction
-                    animated:YES
+                    animated:animated
                   completion:^(BOOL finished) {
                       
                       if (!weakSelf) return;
@@ -158,7 +157,7 @@
     
     _pageController.delegate = self;
     _pageController.dataSource = self;
-    [_pageController setViewControllers:@[[_viewControllerArray objectAtIndex:0]] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
+    [_pageController setViewControllers:@[[_viewControllerArray objectAtIndex:_currentPageIndex]] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
     [self syncScrollView];
 }
 

@@ -27,12 +27,12 @@
     self.MBXPageController.MBXDataSource = self;
     self.MBXPageController.MBXDataDelegate = self;
     self.MBXPageController.pageMode = MBX_SegmentController;
-    [self.MBXPageController reloadPages];
+    [self.MBXPageController reloadPagesToCurrentPageIndex:0];
 }
 
 - (IBAction)goToThirdView:(id)sender {
     
-    [self.MBXPageController moveToViewNumber:2];
+    [self.MBXPageController moveToViewNumber:2 animated:true];
 }
 
 
