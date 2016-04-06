@@ -27,7 +27,7 @@
     // Initiate MBXPageController
     MBXPageViewController *MBXPageController = [MBXPageViewController new];
     MBXPageController.MBXDataSource = self;
-    [MBXPageController reloadPages];
+    [MBXPageController reloadPagesToCurrentPageIndex:0];
 }
 
 #pragma mark - MBXPageViewController Data Source
