@@ -29,11 +29,10 @@
     self.MBXPageController.MBXDataSource = self;
     self.MBXPageController.MBXDataDelegate = self;
     self.MBXPageController.pageMode = MBX_LeftRightArrows;
-    [self.MBXPageController reloadPagesToCurrentPageIndex:0];
+    [self.MBXPageController reloadPages];
 }
 
 - (IBAction)goToThirdScreen:(id)sender {
-    
     [self.MBXPageController moveToViewNumber:2 animated:true];
 }
 
@@ -78,15 +77,10 @@
 
 #pragma mark - MBXPageViewController Delegate
 
-- (void)MBXPageChangedToIndex:(NSInteger)index
-{
+- (void)MBXPageChangedToIndex:(NSInteger)index {
     NSInteger humanizeIndex = index + 1;
     self.currentIndicator.text = [NSString stringWithFormat:@"%li", (long)humanizeIndex];
     NSLog(@"%@ %ld", [self class], (long)index);
-}
-
--(void)MBXPageChanged {
-    NSLog(@"teste");
 }
 
 @end

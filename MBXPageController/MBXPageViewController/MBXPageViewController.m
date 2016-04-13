@@ -44,6 +44,10 @@
 
 #pragma mark - Public
 
+- (void)reloadPages {
+    [self reloadPagesToCurrentPageIndex:0];
+}
+
 - (void)reloadPagesToCurrentPageIndex:(NSInteger)currentPageIndex {
     // Initialize/ Refresh everything
     self.currentPageIndex = currentPageIndex;
@@ -59,6 +63,10 @@
 
 - (void)otherConfiguration {
   // Replace me   
+}
+
+- (void)moveToViewNumber:(NSInteger)viewNumber {
+    [self moveToViewNumber:viewNumber animated:YES];
 }
 
 - (void)moveToViewNumber:(NSInteger)viewNumber animated:(BOOL)animated {

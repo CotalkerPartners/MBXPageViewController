@@ -24,7 +24,10 @@ typedef NS_ENUM(NSInteger, MBXPageMode) {
 
 @property (nonatomic, assign) MBXPageMode                           pageMode;     // This selects the mode of the PageViewController
 
-- (void)reloadPagesToCurrentPageIndex:(NSInteger)currentPageIndex;                                // Like reloadData in tableView. You need to call this method to update the stack of viewcontrollers and/or buttons
+- (void)reloadPages;                                                        // Like reloadData in tableView. You need to call this method to update the stack of viewcontrollers and/or buttons
+- (void)reloadPagesToCurrentPageIndex:(NSInteger)currentPageIndex;          // Like reloadData in tableView. You need to call this method to update the stack of viewcontrollers and/or buttons
+
+- (void)moveToViewNumber:(NSInteger)viewNumber __attribute__((deprecated));                // Default to YES. Deprecated.
 - (void)moveToViewNumber:(NSInteger)viewNumber animated:(BOOL)animated;     // The ViewController position. Starts from 0
 @end
 
